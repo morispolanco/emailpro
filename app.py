@@ -17,7 +17,8 @@ st.session_state['visit_count'] += 1
 
 # Mostrar el contador de visitas y los enlaces en la barra lateral
 st.sidebar.write(f"Visitas a la aplicación: {st.session_state['visit_count']}")
-st.sidebar.write("**¿Desea revisión de textos profesional en 24 horas? [Visite hablemosbien.org](https://hablemosbien.org)**")
+st.sidebar.write("**¿Desea revisión profesional de textos en 24 horas? [Visite hablemosbien.org](https://hablemosbien.org)**")
+st.sidebar.write("**Su anuncio [aquí](https://hablemosbien.org/anuncio.htm)**")
 
 # Descripción de la aplicación
 st.write("""
