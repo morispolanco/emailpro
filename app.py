@@ -11,7 +11,7 @@ st.title(title)
 
 # Contador de visitas global
 if 'visit_count' not in st.session_state:
-    st.session_state['visit_count'] = 0
+    st.session_state['visit_count'] = 345
 
 st.session_state['visit_count'] += 1
 
