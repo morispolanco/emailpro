@@ -15,8 +15,10 @@ if 'visit_count' not in st.session_state:
 
 st.session_state['visit_count'] += 1
 
-# Mostrar el contador de visitas
+# Mostrar el contador de visitas y los enlaces en la barra lateral
 st.sidebar.write(f"Visitas a la aplicación: {st.session_state['visit_count']}")
+st.sidebar.write("**¿Desea revisión de textos profesional en 24 horas? [Visite hablemosbien.org](https://hablemosbien.org)**")
+st.sidebar.write("**Su anuncio aquí: [mp@ufm.edu](mailto:mp@ufm.edu?subject=Interesado%20en%20anunciar%20mi%20sitio)**")
 
 # Descripción de la aplicación
 st.write("""
@@ -96,10 +98,3 @@ if st.button("Generar correo"):
             )
         else:
             st.error("Hubo un error al generar el correo. Por favor, intenta nuevamente.")
-
-# Nota final
-st.write("""
-**¿Desea revisión de textos profesional en 24 horas? [Visite hablemosbien.org](https://hablemosbien.org)**
-
-**Su anuncio aquí: [mp@ufm.edu](mailto:mp@ufm.edu?subject=Interesado%20en%20anunciar%20mi%20sitio)**
-""")
