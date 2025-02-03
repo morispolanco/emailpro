@@ -9,6 +9,15 @@ title = "Generador de correos profesionales en español"
 st.set_page_config(page_title=title)
 st.title(title)
 
+# Inicializar el contador de visitas
+if 'visit_count' not in st.session_state:
+    st.session_state['visit_count'] = 0
+
+st.session_state['visit_count'] += 1
+
+# Mostrar el contador de visitas
+st.sidebar.write(f"Visitas a la aplicación: {st.session_state['visit_count']}")
+
 # Descripción de la aplicación
 st.write("""
 Esta aplicación genera correos profesionales en español basados en el mensaje del usuario y la información del destinatario. 
@@ -90,5 +99,7 @@ if st.button("Generar correo"):
 
 # Nota final
 st.write("""
-**¿Desea revisión profesional de textos en 24 horas? [Visite hablemosbien.org](https://hablemosbien.org)**
+**¿Desea revisión de textos profesional en 24 horas? [Visite hablemosbien.org](https://hablemosbien.org)**
+
+**Su anuncio aquí: [mp@ufm.edu](mailto:mp@ufm.edu?subject=Interesado%20en%20anunciar%20mi%20sitio)**
 """)
