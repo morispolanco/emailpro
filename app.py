@@ -3,36 +3,22 @@ import requests
 import json
 from io import BytesIO
 from docx import Document
-import os
 
 # Configurar la página
 title = "Generador de correos profesionales en español"
 st.set_page_config(page_title=title)
 st.title(title)
 
-# Función para leer y actualizar el contador de visitas
-def get_and_update_visit_count():
-    count_file = "visit_count.txt"
-    if not os.path.exists(count_file):
-        with open(count_file, "w") as file:
-            file.write("100")  # Iniciar el contador en 100 si no existe el archivo
+# Inicializar el contador de visitas
+if 'visit_count' not in st.session_state:
+    st.session_state['visit_count'] = 100
 
-    # Leer el contador actual
-    with open(count_file, "r") as file:
-        count = int(file.read().strip())
+st.session_state['visit_count'] += 1
 
-    # Incrementar el contador y guardarlo
-    count += 1
-    with open(count_file, "w") as file:
-        file.write(str(count))
-
-    return count
-
-# Obtener y mostrar el contador de visitas
-visit_count = get_and_update_visit_count()
-st.sidebar.write(f"Visitas a la aplicación: {visit_count}")
+# Mostrar el contador de visitas y los enlaces en la barra lateral
+st.sidebar.write(f"Visitas a la aplicación: {st.session_state['visit_count']}")
 st.sidebar.write("**¿Desea revisión de textos profesional en 24 horas? [Visite hablemosbien.org](https://hablemosbien.org)**")
-st.sidebar.write("**Su anuncio aquí: [mp@ufm.edu](mailto:mp@ufm.edu?subject=Interesado%20en%20anunciar%20mi%20sitio)**")
+st.sidebar.write("**Su anuncio aquí: [hablemosbien.org](https://hablemosbien.org/anuncio.htm)**")
 
 # Descripción de la aplicación
 st.write("""
