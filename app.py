@@ -90,5 +90,5 @@ if st.button("Generar correo"):
 
 # Nota final
 st.write("""
-**Nota:** Esta aplicación usa la API de Together para generar contenido. El resultado es un borrador que puede ser revisado y ajustado según tus necesidades.
+**¿Desea revisión profesional de textos en 24 horas? [Visite hablemosbien.org](https://hablemosbien.org)**
 """)
